@@ -6,4 +6,14 @@ services:                       # Dictionnary of services to run
       dockerfile: Dockerfile
     image: dojo-docker:1.0.0    # The name of the image to run
     ports:
-      - 3000:3000               # Map host port 3000 to container port 3000
+      - 3128:3000               # Map host port 3128 to container port 3000
+
+  mongodb:
+    image: mongo:4.2.8-bionic
+    volumes:
+      - ./mongodb-data:/data/db # Bind host directory ./mongodb-data to container directory /data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dojo
+      MONGO_INITDB_ROOT_PASSWORD: docker
+    ports:
+      - "27128:27017"
