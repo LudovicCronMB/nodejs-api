@@ -1,9 +1,9 @@
-version: '3'
-services:
-  node:
-    build:
+version: '3'                    # Version for docker-compose interpreter
+services:                       # Dictionnary of services to run
+  node:                         # Name of the service
+    build:                      # Define how to build the image "dojo-docker:1.0.0" if the image is not found in local docker image repo
       context: .
       dockerfile: Dockerfile
-    image: dojo-docker:1.0.0
+    image: dojo-docker:1.0.0    # The name of the image to run
     ports:
-      - 3000:3000
+      - 3000:3000               # Map host port 3000 to container port 3000
