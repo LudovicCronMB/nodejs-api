@@ -8,7 +8,7 @@ services:                       # Dictionnary of services to run
     ports:
       - 3128:3000               # Map host port 3128 to container port 3000
 
-  mongodb:
+  mongodb:                      # Connection to mongodb: "mongo mongodb://dojo:docker@localhost:27128"
     image: mongo:4.2.8-bionic
     volumes:
       - ./mongodb-data:/data/db # Bind host directory ./mongodb-data to container directory /data/db
